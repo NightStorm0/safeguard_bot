@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Crypto Clicker</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+
+
+            
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+            background-color: #f0f0f0;
+            color: #333;
+        }
+        h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        button {
+            padding: 12px 24px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome, <span id="username">Detective</span>!</h1>
+    <button onclick="handleClick()">Click Me!</button>
+
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <script>
+        Telegram.WebApp.ready();
+        const user = Telegram.WebApp.initDataUnsafe.user || { first_name: "Guest" };
+        document.getElementById("username").textContent = user.first_name;
+
+        function handleClick() {
+            Telegram.WebApp.sendData("ssssss");
+            Telegram.WebApp.HapticFeedback.impactOccurred("light"); // Subtle feedback
+        }
+    </script>
+</body>
+</html>
